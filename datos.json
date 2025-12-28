@@ -2,121 +2,121 @@
 {
     "id": 1,
     "nombre": "Pepe",
-    "foto": "1 Pepe.jpg",
+    "foto": "Pepe.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 2,
     "nombre": "Julia",
-    "foto": "2 Julia.jpg",
+    "foto": "Julia.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 3,
     "nombre": "Tete",
-    "foto": "3 Tete.jpg",
+    "foto": "Tete.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },          
   {
     "id": 4,
     "nombre": "Encarna",
-    "foto": "4 Encarna.jpg",
+    "foto": "Encarna.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 5,
     "nombre": "Dani",
-    "foto": "5 Dani",
+    "foto": "Dani",
     "regalos": ["Auriculares Sony", "Skincare Sephora"]
   }
   {
     "id": 6,
     "nombre": "Victoria",
-    "foto": "6 Victoria.jpg",
+    "foto": "Victoria.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 7,
     "nombre": "Eva",
-    "foto": "7 Eva.jpg",
+    "foto": "Eva.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 8,
     "nombre": "Carles",
-    "foto": "8 Carles.jpg",
+    "foto": "Carles.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },          
   {
     "id": 9,
     "nombre": "Sergio",
-    "foto": "9 Sergio.jpg",
+    "foto": "Sergio.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 10,
     "nombre": "Ro",
-    "foto": "10 Ro",
+    "foto": "Ro",
     "regalos": ["Auriculares Sony", "Skincare Sephora"]
   } 
   {
     "id": 11,
     "nombre": "Cristina",
-    "foto": "11 Cris.jpg",
+    "foto": "Cris.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 12,
     "nombre": "Fran",
-    "foto": "12 Fran.jpg",
+    "foto": "Fran.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 13,
     "nombre": "Mario",
-    "foto": "13 Mario.jpg",
+    "foto": "Mario.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },          
   {
     "id": 14,
     "nombre": "Ana",
-    "foto": "14 Ana.jpg",
+    "foto": "Ana.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 15,
     "nombre": "Marc",
-    "foto": "15 Marc.jpg",
+    "foto": "Marc.jpg",
     "regalos": ["Auriculares Sony", "Skincare Sephora"]
   }
   {
     "id": 16,
     "nombre": "Berta",
-    "foto": "16 Berta.jpg",
+    "foto": "Berta.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 17,
     "nombre": "Carla",
-    "foto": "17 Carla.jpg",
+    "foto": "Carla.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 18,
     "nombre": "Roger",
-    "foto": "18 Roger.jpg",
+    "foto": "Roger.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },          
   {
     "id": 19,
     "nombre": "Aitana",
-    "foto": "19 Aitana.jpg",
+    "foto": "Aitana.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 20,
     "nombre": "Marti",
-    "foto": "20 Marti",
+    "foto": "Marti",
     "regalos": ["Auriculares Sony", "Skincare Sephora"]
   }    
 ]
