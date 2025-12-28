@@ -1,14 +1,122 @@
 [
-  {
+{
     "id": 1,
-    "nombre": "Dani",
-    "foto": "C:\Users\danig\OneDrive\Escritorio\Projectes\Fotos\Dani\20221220_160114.jpg",
+    "nombre": "Pepe",
+    "foto": "1 Pepe.jpg",
     "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
   },
   {
     "id": 2,
-    "nombre": "Prima Ana",
-    "foto": "https://tusitio.com/foto2.jpg",
+    "nombre": "Julia",
+    "foto": "2 Julia.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 3,
+    "nombre": "Tete",
+    "foto": "3 Tete.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },          
+  {
+    "id": 4,
+    "nombre": "Encarna",
+    "foto": "4 Encarna.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 5,
+    "nombre": "Dani",
+    "foto": "5 Dani",
     "regalos": ["Auriculares Sony", "Skincare Sephora"]
   }
+  {
+    "id": 6,
+    "nombre": "Victoria",
+    "foto": "6 Victoria.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 7,
+    "nombre": "Eva",
+    "foto": "7 Eva.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 8,
+    "nombre": "Carles",
+    "foto": "8 Carles.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },          
+  {
+    "id": 9,
+    "nombre": "Sergio",
+    "foto": "9 Sergio.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 10,
+    "nombre": "Ro",
+    "foto": "10 Ro",
+    "regalos": ["Auriculares Sony", "Skincare Sephora"]
+  } 
+  {
+    "id": 11,
+    "nombre": "Cristina",
+    "foto": "11 Cris.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 12,
+    "nombre": "Fran",
+    "foto": "12 Fran.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 13,
+    "nombre": "Mario",
+    "foto": "13 Mario.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },          
+  {
+    "id": 14,
+    "nombre": "Ana",
+    "foto": "14 Ana.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 15,
+    "nombre": "Marc",
+    "foto": "15 Marc.jpg",
+    "regalos": ["Auriculares Sony", "Skincare Sephora"]
+  }
+  {
+    "id": 16,
+    "nombre": "Berta",
+    "foto": "16 Berta.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 17,
+    "nombre": "Carla",
+    "foto": "17 Carla.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 18,
+    "nombre": "Roger",
+    "foto": "18 Roger.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },          
+  {
+    "id": 19,
+    "nombre": "Aitana",
+    "foto": "19 Aitana.jpg",
+    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
+  },
+  {
+    "id": 20,
+    "nombre": "Marti",
+    "foto": "20 Marti",
+    "regalos": ["Auriculares Sony", "Skincare Sephora"]
+  }    
 ]
