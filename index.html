@@ -59,7 +59,7 @@
             // Intenta cargar la foto .jpg con el nombre del familiar
             card.innerHTML = `
                 <div class="aspect-square bg-gray-200 relative">
-                    <img src="${nombre}.jpg" onerror="this.src='https://ui-avatars.com/api/?name=${nombre}&background=random&size=200'" class="w-full h-full object-cover">
+                    <img src="${nombre}.jpg" onerror="this.src='https://ui-avatars.com/api/?name=${nombre}&background=random&size=200'" class="w-full h-full object-contain">
                 </div>
                 <div class="p-3 text-center font-bold text-gray-800 border-t border-gray-100">${nombre}</div>
             `;
