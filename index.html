@@ -3,177 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Regalos Familia</title>
+    <title>Lista de Regalos Familiar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { -webkit-tap-highlight-color: transparent; }
+        body { -webkit-tap-highlight-color: transparent; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         .modal-active { overflow: hidden; }
+        .grid-fotos { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; padding: 15px; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen pb-10">
+<body class="bg-gray-100 min-h-screen">
 
-    <header class="p-6 text-center">
-        <h1 class="text-3xl font-bold text-slate-800">🎁 Amic Invisible 2026</h1>
-        <p class="text-slate-500">Toca a alguien para ver su lista</p>
+    <header class="py-8 px-4 text-center bg-white shadow-sm mb-4">
+        <h1 class="text-3xl font-extrabold text-red-600">🎁 Regalos Familia</h1>
+        <p class="text-gray-500 mt-2">Toca la foto para ver los deseos</p>
     </header>
 
-    <main id="app" class="grid grid-cols-2 sm:grid-cols-3 gap-4 px-4 max-w-2xl mx-auto">
-        </main>
+    <div id="contenedor" class="grid-fotos max-w-4xl mx-auto">
+        </div>
 
     <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="cerrar()"></div>
-        <div class="relative bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl scale-95 transition-transform">
-            <h2 id="m-nombre" class="text-2xl font-bold mb-4 text-center"></h2>
-            <ul id="m-regalos" class="space-y-3 mb-6"></ul>
-            <button onclick="cerrar()" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold active:scale-95 transition-transform">
-                Cerrar
-            </button>
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="cerrar()"></div>
+        <div class="relative bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl transform transition-all">
+            <div id="modal-color" class="h-24 bg-red-500 flex items-center justify-center">
+                <h2 id="m-nombre" class="text-2xl font-bold text-white uppercase tracking-wider"></h2>
+            </div>
+            <div class="p-6">
+                <h3 class="text-gray-400 uppercase text-xs font-bold mb-3">Lista de Deseos:</h3>
+                <ul id="m-regalos" class="space-y-3 mb-6"></ul>
+                <button onclick="cerrar()" class="w-full py-4 bg-gray-900 text-white rounded-2xl font-bold active:scale-95 transition-all">
+                    VOLVER
+                </button>
+            </div>
         </div>
     </div>
 
     <script>
-        // Aquí pegas el contenido de tu JSON
-        const familia = [
-  {
-    "id": 1,
-    "nombre": "Pepe",
-    "foto": "Pepe.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 2,
-    "nombre": "Julia",
-    "foto": "Julia.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 3,
-    "nombre": "Tete",
-    "foto": "Tete.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },          
-  {
-    "id": 4,
-    "nombre": "Encarna",
-    "foto": "Encarna.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 5,
-    "nombre": "Dani",
-    "foto": "Dani",
-    "regalos": ["Auriculares Sony", "Skincare Sephora"]
-  }
-  {
-    "id": 6,
-    "nombre": "Victoria",
-    "foto": "Victoria.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 7,
-    "nombre": "Eva",
-    "foto": "Eva.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 8,
-    "nombre": "Carles",
-    "foto": "Carles.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },          
-  {
-    "id": 9,
-    "nombre": "Sergio",
-    "foto": "Sergio.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 10,
-    "nombre": "Ro",
-    "foto": "Ro",
-    "regalos": ["Auriculares Sony", "Skincare Sephora"]
-  } 
-  {
-    "id": 11,
-    "nombre": "Cristina",
-    "foto": "Cris.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 12,
-    "nombre": "Fran",
-    "foto": "Fran.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 13,
-    "nombre": "Mario",
-    "foto": "Mario.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },          
-  {
-    "id": 14,
-    "nombre": "Ana",
-    "foto": "Ana.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 15,
-    "nombre": "Marc",
-    "foto": "Marc.jpg",
-    "regalos": ["Auriculares Sony", "Skincare Sephora"]
-  }
-  {
-    "id": 16,
-    "nombre": "Berta",
-    "foto": "Berta.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 17,
-    "nombre": "Carla",
-    "foto": "Carla.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 18,
-    "nombre": "Roger",
-    "foto": "Roger.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },          
-  {
-    "id": 19,
-    "nombre": "Aitana",
-    "foto": "Aitana.jpg",
-    "regalos": ["Cafetera Dolce Gusto", "Libro de Stephen King"]
-  },
-  {
-    "id": 20,
-    "nombre": "Marti",
-    "foto": "Marti",
-    "regalos": ["Auriculares Sony", "Skincare Sephora"]
-  }    
-]
+        // Lista oficial de tus 21 familiares
+        const nombres = ["Pepe", "Julia", "Antonio", "Encarna", "Dani", "Victoria", "Eva", "Carles", "Sergio", "Ro", "Cristina", "Fran", "Mario", "Ana", "Marc", "Berta", "Carla", "Roger", "Aitana", "Martí"];
 
-        const app = document.getElementById('app');
-        
-        familia.forEach((p, i) => {
+        // Aquí puedes ir rellenando los regalos de cada uno
+        const regalosDB = {
+            "Pepe": ["Libro de cocina", "Vino tinto"],
+            "Julia": ["Pendientes", "Perfume"],
+            "Antonio": ["Herramientas", "Calcetines divertidos"],
+            "Encarna": ["Planta de interior", "Libro de misterio"]
+            // Los demás aparecerán con "Lista vacía" hasta que añadas más aquí
+        };
+
+        const contenedor = document.getElementById('contenedor');
+
+        nombres.forEach(nombre => {
             const card = document.createElement('div');
-            card.className = "bg-white rounded-2xl overflow-hidden shadow-sm active:scale-95 transition-transform cursor-pointer";
+            card.className = "bg-white rounded-2xl shadow-md overflow-hidden active:scale-95 transition-all cursor-pointer border border-gray-200";
+            
+            // Intenta cargar la foto .jpg con el nombre del familiar
             card.innerHTML = `
-                <img src="${p.foto}" class="w-full aspect-square object-cover">
-                <div class="p-3 text-center font-medium text-slate-700">${p.nombre}</div>
+                <div class="aspect-square bg-gray-200 relative">
+                    <img src="${nombre}.jpg" onerror="this.src='https://ui-avatars.com/api/?name=${nombre}&background=random&size=200'" class="w-full h-full object-cover">
+                </div>
+                <div class="p-3 text-center font-bold text-gray-800 border-t border-gray-100">${nombre}</div>
             `;
-            card.onclick = () => abrir(i);
-            app.appendChild(card);
+            card.onclick = () => abrir(nombre);
+            contenedor.appendChild(card);
         });
 
-        function abrir(i) {
-            document.getElementById('m-nombre').innerText = familia[i].nombre;
-            document.getElementById('m-regalos').innerHTML = familia[i].regalos
-                .map(r => `<li class="bg-slate-100 p-3 rounded-xl text-slate-700">🔹 ${r}</li>`).join('');
+        function abrir(nombre) {
+            document.getElementById('m-nombre').innerText = nombre;
+            const lista = document.getElementById('m-regalos');
+            const misRegalos = regalosDB[nombre] || ["Aún no ha pedido nada 🎅"];
+            
+            lista.innerHTML = misRegalos
+                .map(r => `<li class="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-gray-700 font-medium">
+                            <span class="text-red-500">✦</span> ${r}
+                           </li>`).join('');
+
             document.getElementById('modal').classList.remove('hidden');
             document.body.classList.add('modal-active');
         }
