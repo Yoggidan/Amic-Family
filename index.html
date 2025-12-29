@@ -42,14 +42,17 @@
         const nombres = ["Pepe", "Julia", "Tete", "Encarna", "Dani", "Victoria", "Eva", "Carles", "Sergio", "Ro", "Cris", "Fran", "Mario", "Ana", "Marc", "Berta", "Carla", "Roger", "Aitana", "Marti"];
 
         // Aquí puedes ir rellenando los regalos de cada uno
+        
         const regalosDB = {
-            "Pepe": ["Bambas núm 43/44", "Cartera billetero , igual foto"],
-            "Julia": ["Pendientes", "Perfume"],
-            "Tete": ["Herramientas", "Calcetines divertidos"],
-            "Encarna": ["Planta de interior", "Libro de misterio"]
-            // Los demás aparecerán con "Lista vacía" hasta que añadas más aquí
+            "Pepe": [
+                { texto: "Bambas núm 43/44"},
+                { texto: "Cartera Billetero", foto: "CarteraPepe.jgp" }
+            ],
+            "Julia": [
+                { texto: "Pendientes", link: "https://tienda.com/joya", foto: "pendientes.png" }
+            ]
         };
-
+        
         const contenedor = document.getElementById('contenedor');
 
         nombres.forEach(nombre => {
@@ -70,12 +73,27 @@
         function abrir(nombre) {
             document.getElementById('m-nombre').innerText = nombre;
             const lista = document.getElementById('m-regalos');
-            const misRegalos = regalosDB[nombre] || ["Aún no ha pedido nada 🎅"];
-            
-            lista.innerHTML = misRegalos
-                .map(r => `<li class="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-gray-700 font-medium">
-                            <span class="text-red-500">✦</span> ${r}
-                           </li>`).join('');
+            const misRegalos = regalosDB[nombre] || [];
+    
+            if (misRegalos.length === 0) {
+                lista.innerHTML = `<li class="text-center text-gray-400">Aún no ha pedido nada 🎅</li>`;
+            } else {
+                lista.innerHTML = misRegalos.map(r => `
+                    <li class="bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-gray-800 text-lg">✦ ${r.texto}</span>
+                    
+                            ${r.foto ? `<img src="${r.foto}" class="w-full h-32 object-contain rounded-lg my-2 border bg-white">` : ''}
+                    
+                            ${r.link ? `
+                                <a href="${r.link}" target="_blank" class="text-blue-600 font-bold underline flex items-center gap-1">
+                                    Ver o comprar aquí 🔗
+                                </a>
+                            ` : ''}
+                        </div>
+                    </li>
+                `).join('');
+            }
 
             document.getElementById('modal').classList.remove('hidden');
             document.body.classList.add('modal-active');
