@@ -9,6 +9,29 @@
         body { -webkit-tap-highlight-color: transparent; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         .modal-active { overflow: hidden; }
         .grid-fotos { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; padding: 15px; }
+
+        /* Hacer visible la barra de scroll en el modal */
+        #modal .overflow-y-auto::-webkit-scrollbar {
+            width: 10px; /* Un poco más ancha para que se vea bien */
+            display: block;
+        }
+
+    #modal .overflow-y-auto::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Color de fondo del carril */
+        border-radius: 10px;
+    }
+
+    #modal .overflow-y-auto::-webkit-scrollbar-thumb {
+        background: #555; /* Color gris oscuro para la barra */
+        border-radius: 10px;
+        border: 2px solid #f1f1f1; /* Crea un efecto de separación */
+    }
+
+    /* Para Firefox */
+    #modal .overflow-y-auto {
+        scrollbar-width: auto;
+        scrollbar-color: #555 #f1f1f1;
+    }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
