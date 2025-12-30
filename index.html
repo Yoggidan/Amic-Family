@@ -186,40 +186,42 @@
             contenedor.appendChild(card);
         });
 
-        function abrir(nombre) {
-            document.getElementById('m-nombre').innerText = nombre;
-            const lista = document.getElementById('m-regalos');
-            const misRegalos = regalosDB[nombre] || [];
-    
-            if (misRegalos.length === 0) {
-                lista.innerHTML = `<li class="text-center text-gray-400">Aún no ha pedido nada 🎅</li>`;
-            } else {
-                lista.innerHTML = misRegalos.map(r => `
-                    <li class="bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
-                        <div class="flex flex-col gap-2">
-                            <span class="font-bold text-gray-800 text-lg">✦ ${r.texto}</span>
+    function abrir(nombre) {
+         document.getElementById('m-nombre').innerText = nombre;
+        const lista = document.getElementById('m-regalos');
+        const misRegalos = regalosDB[nombre] || [];
 
-                            ${r.fotos && r.fotos.length > 0 ? `
-                                <div class="flex gap-2 overflow-x-auto py-2">
-                                    ${r.fotos.map(f => `
-                                        <img src="${f}" class="w-40 h-40 object-contain rounded-lg border bg-white flex-shrink-0">
-                                    `).join('')}
-                                </div>
-                            ` : ''}
-                            
-                            ${r.link ? `
-                                <a href="${r.link}" target="_blank" class="block mt-2 text-blue-600 font-bold underline flex items-center gap-1">
-                                    Ver o comprar aquí 🔗
-                                </a>
-                            ` : ''}
-                        </div>
-                    </li>
-                `).join('');
-            }
+        if (misRegalos.length === 0) {
+            lista.innerHTML = `<li class="text-center text-gray-400">Aún no ha pedido nada 🎅</li>`;
+        } else {
+            lista.innerHTML = misRegalos.map(r => `
+                <li class="bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="flex flex-col gap-2">
+                        <span class="font-bold text-gray-800 text-lg">✦ ${r.texto}</span>
+                    
+                        ${r.foto ? `<img src="${r.foto}" class="w-full h-40 object-contain rounded-lg my-2 border bg-white">` : ''}
 
-            document.getElementById('modal').classList.remove('hidden');
-            document.body.classList.add('modal-active');
+                        ${r.fotos && r.fotos.length > 0 ? `
+                            <div class="flex gap-2 overflow-x-auto py-2 scrollbar-fina">
+                                ${r.fotos.map(f => `
+                                    <img src="${f}" class="w-40 h-40 object-contain rounded-lg border bg-white flex-shrink-0">
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    
+                        ${r.link ? `
+                            <a href="${r.link}" target="_blank" class="block mt-2 text-blue-600 font-bold underline flex items-center gap-1">
+                                Ver o comprar aquí 🔗
+                            </a>
+                        ` : ''}
+                    </div>
+                </li>
+            `).join('');
         }
+
+        document.getElementById('modal').classList.remove('hidden');
+        document.body.classList.add('modal-active');
+} 
 
         function cerrar() {
             document.getElementById('modal').classList.add('hidden');
